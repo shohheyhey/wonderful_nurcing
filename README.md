@@ -1,0 +1,2 @@
+# wonderful_nurcing
+ワンダフルコードで学習した内容を基にnurcingアプリを作り直す
