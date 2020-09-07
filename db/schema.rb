@@ -83,4 +83,11 @@ ActiveRecord::Schema.define(version: 2020_09_07_052934) do
     t.index ["office_id"], name: "index_services_on_office_id"
   end
 
+  add_foreign_key "categories", "offices"
+  add_foreign_key "customers", "categories"
+  add_foreign_key "customers", "offices"
+  add_foreign_key "service_customers", "customers"
+  add_foreign_key "service_customers", "services"
+  add_foreign_key "services", "categories"
+  add_foreign_key "services", "offices"
 end

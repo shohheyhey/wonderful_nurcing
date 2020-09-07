@@ -12,5 +12,11 @@
 #
 #  index_categories_on_office_id  (office_id)
 #
+# Foreign Keys
+#
+#  fk_rails_...  (office_id => offices.id)
+#
 class Category < ApplicationRecord
+  belongs_to :office
+  has_many :services, dependent: :nullify
 end
