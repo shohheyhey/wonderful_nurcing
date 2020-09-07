@@ -5,6 +5,7 @@ AllCops:
     - "vendor/**/*"       # rubocop config/default.yml
     - "db/schema.rb"
     - "bin/**/*"
+    - "spec/**/*"
 
 #################### Layout ################################
 
