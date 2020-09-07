@@ -28,5 +28,5 @@ class Service < ApplicationRecord
   accepts_nested_attributes_for :service_customers
 
   validates :name, presence: true
-  validates :fee, presence: true, numericality: { greater_than: 1}
+  validates :fee, presence: true, numericality: { greater_than: 1 }
 end
