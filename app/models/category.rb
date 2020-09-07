@@ -18,5 +18,5 @@
 #
 class Category < ApplicationRecord
   belongs_to :office
-  has_many :services
+  has_many :services, dependent: :nullify
 end

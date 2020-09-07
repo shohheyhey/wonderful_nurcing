@@ -27,7 +27,7 @@
 class Customer < ApplicationRecord
   belongs_to :office
   belongs_to :category
-  has_many :services, thorough: :service_customers
-  has_many :service_customers
+  has_many :services, through: :service_customers, dependent: :nullify
+  has_many :service_customers, dependent: :nullify
   accepts_nested_attributes_for :service_customers
 end

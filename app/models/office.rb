@@ -38,7 +38,7 @@ class Office < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
-  has_many :categories
-  has_many :services
-  has_many :customers
+  has_many :categories, dependent: :nullify
+  has_many :services, dependent: :nullify
+  has_many :customers, dependent: :nullify
 end
