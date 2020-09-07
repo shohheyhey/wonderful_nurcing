@@ -30,7 +30,6 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
-
 Faker::Config.locale = :ja
 
 RSpec.configure do |config|
