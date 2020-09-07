@@ -41,4 +41,9 @@ class Office < ApplicationRecord
   has_many :categories, dependent: :nullify
   has_many :services, dependent: :nullify
   has_many :customers, dependent: :nullify
+
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true, length: { minimum: 8}
+  validates :password_confirmation, presence: true, length: { minimum: 8}
 end

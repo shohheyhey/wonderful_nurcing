@@ -30,4 +30,8 @@ class Customer < ApplicationRecord
   has_many :services, through: :service_customers, dependent: :nullify
   has_many :service_customers, dependent: :nullify
   accepts_nested_attributes_for :service_customers
+
+  validates :name, presence: true
+  validates :kaigodo, length: { in: 1..5 }
+  validates :birthday, presence: true
 end
