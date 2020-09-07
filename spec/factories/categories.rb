@@ -12,6 +12,10 @@
 #
 #  index_categories_on_office_id  (office_id)
 #
+# Foreign Keys
+#
+#  fk_rails_...  (office_id => offices.id)
+#
 FactoryBot.define do
   factory :category do
     office { "" }

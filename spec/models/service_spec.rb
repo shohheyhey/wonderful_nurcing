@@ -15,6 +15,11 @@
 #  index_services_on_category_id  (category_id)
 #  index_services_on_office_id    (office_id)
 #
+# Foreign Keys
+#
+#  fk_rails_...  (category_id => categories.id)
+#  fk_rails_...  (office_id => offices.id)
+#
 require 'rails_helper'
 
 RSpec.describe Service, type: :model do

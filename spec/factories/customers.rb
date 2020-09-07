@@ -19,6 +19,11 @@
 #  index_customers_on_category_id  (category_id)
 #  index_customers_on_office_id    (office_id)
 #
+# Foreign Keys
+#
+#  fk_rails_...  (category_id => categories.id)
+#  fk_rails_...  (office_id => offices.id)
+#
 FactoryBot.define do
   factory :customer do
     office { "" }
