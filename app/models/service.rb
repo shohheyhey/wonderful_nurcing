@@ -26,4 +26,7 @@ class Service < ApplicationRecord
   has_many :customers, through: :service_customers, dependent: :nullify
   has_many :service_customers, dependent: :nullify
   accepts_nested_attributes_for :service_customers
+
+  validates :name, presence: true
+  validates :fee, presence: true, numericality: { greater_than: 1 }
 end
