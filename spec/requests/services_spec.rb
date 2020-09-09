@@ -15,115 +15,115 @@
 RSpec.describe "/services", type: :request do
   # Service. As you add validations to Service, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  # let(:valid_attributes) {
+  #   skip("Add a hash of attributes valid for your model")
+  # }
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  # let(:invalid_attributes) {
+  #   skip("Add a hash of attributes invalid for your model")
+  # }
 
-  describe "GET /index" do
-    it "renders a successful response" do
-      Service.create! valid_attributes
-      get services_url
-      expect(response).to be_successful
-    end
-  end
+  # describe "GET /index" do
+  #   it "renders a successful response" do
+  #     Service.create! valid_attributes
+  #     get services_url
+  #     expect(response).to be_successful
+  #   end
+  # end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      service = Service.create! valid_attributes
-      get service_url(service)
-      expect(response).to be_successful
-    end
-  end
+  # describe "GET /show" do
+  #   it "renders a successful response" do
+  #     service = Service.create! valid_attributes
+  #     get service_url(service)
+  #     expect(response).to be_successful
+  #   end
+  # end
 
-  describe "GET /new" do
-    it "renders a successful response" do
-      get new_service_url
-      expect(response).to be_successful
-    end
-  end
+  # describe "GET /new" do
+  #   it "renders a successful response" do
+  #     get new_service_url
+  #     expect(response).to be_successful
+  #   end
+  # end
 
-  describe "GET /edit" do
-    it "render a successful response" do
-      service = Service.create! valid_attributes
-      get edit_service_url(service)
-      expect(response).to be_successful
-    end
-  end
+  # describe "GET /edit" do
+  #   it "render a successful response" do
+  #     service = Service.create! valid_attributes
+  #     get edit_service_url(service)
+  #     expect(response).to be_successful
+  #   end
+  # end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Service" do
-        expect {
-          post services_url, params: { service: valid_attributes }
-        }.to change(Service, :count).by(1)
-      end
+  # describe "POST /create" do
+  #   context "with valid parameters" do
+  #     it "creates a new Service" do
+  #       expect {
+  #         post services_url, params: { service: valid_attributes }
+  #       }.to change(Service, :count).by(1)
+  #     end
 
-      it "redirects to the created service" do
-        post services_url, params: { service: valid_attributes }
-        expect(response).to redirect_to(service_url(Service.last))
-      end
-    end
+  #     it "redirects to the created service" do
+  #       post services_url, params: { service: valid_attributes }
+  #       expect(response).to redirect_to(service_url(Service.last))
+  #     end
+  #   end
 
-    context "with invalid parameters" do
-      it "does not create a new Service" do
-        expect {
-          post services_url, params: { service: invalid_attributes }
-        }.to change(Service, :count).by(0)
-      end
+  #   context "with invalid parameters" do
+  #     it "does not create a new Service" do
+  #       expect {
+  #         post services_url, params: { service: invalid_attributes }
+  #       }.to change(Service, :count).by(0)
+  #     end
 
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post services_url, params: { service: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
+  #     it "renders a successful response (i.e. to display the 'new' template)" do
+  #       post services_url, params: { service: invalid_attributes }
+  #       expect(response).to be_successful
+  #     end
+  #   end
+  # end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  # describe "PATCH /update" do
+  #   context "with valid parameters" do
+  #     let(:new_attributes) {
+  #       skip("Add a hash of attributes valid for your model")
+  #     }
 
-      it "updates the requested service" do
-        service = Service.create! valid_attributes
-        patch service_url(service), params: { service: new_attributes }
-        service.reload
-        skip("Add assertions for updated state")
-      end
+  #     it "updates the requested service" do
+  #       service = Service.create! valid_attributes
+  #       patch service_url(service), params: { service: new_attributes }
+  #       service.reload
+  #       skip("Add assertions for updated state")
+  #     end
 
-      it "redirects to the service" do
-        service = Service.create! valid_attributes
-        patch service_url(service), params: { service: new_attributes }
-        service.reload
-        expect(response).to redirect_to(service_url(service))
-      end
-    end
+  #     it "redirects to the service" do
+  #       service = Service.create! valid_attributes
+  #       patch service_url(service), params: { service: new_attributes }
+  #       service.reload
+  #       expect(response).to redirect_to(service_url(service))
+  #     end
+  #   end
 
-    context "with invalid parameters" do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        service = Service.create! valid_attributes
-        patch service_url(service), params: { service: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
+  #   context "with invalid parameters" do
+  #     it "renders a successful response (i.e. to display the 'edit' template)" do
+  #       service = Service.create! valid_attributes
+  #       patch service_url(service), params: { service: invalid_attributes }
+  #       expect(response).to be_successful
+  #     end
+  #   end
+  # end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested service" do
-      service = Service.create! valid_attributes
-      expect {
-        delete service_url(service)
-      }.to change(Service, :count).by(-1)
-    end
+  # describe "DELETE /destroy" do
+  #   it "destroys the requested service" do
+  #     service = Service.create! valid_attributes
+  #     expect {
+  #       delete service_url(service)
+  #     }.to change(Service, :count).by(-1)
+  #   end
 
-    it "redirects to the services list" do
-      service = Service.create! valid_attributes
-      delete service_url(service)
-      expect(response).to redirect_to(services_url)
-    end
-  end
+  #   it "redirects to the services list" do
+  #     service = Service.create! valid_attributes
+  #     delete service_url(service)
+  #     expect(response).to redirect_to(services_url)
+  #   end
+  # end
 end

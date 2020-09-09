@@ -24,6 +24,10 @@
 #  fk_rails_...  (category_id => categories.id)
 #  fk_rails_...  (office_id => offices.id)
 #
-class CustomerSerializer < ActiveModel::Serializer
+class Api::V1::CustomerSerializer < ActiveModel::Serializer
+  belongs_to :office
+  belongs_to :category
+  # has_many :services, through: :service_customers, dependent: :nullify
+  # has_many :service_customers, dependent: :nullify
   attributes :id, :office, :category, :name, :age, :birthday, :kaigodo, :medical_history, :discription
 end
