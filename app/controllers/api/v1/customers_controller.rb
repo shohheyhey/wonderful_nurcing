@@ -6,7 +6,7 @@ module Api::V1
     # GET /customers.json
     def index
       @customers = Customer.all
-      render json: @customers
+      # render json: @customers
     end
 
     # GET /customers/1
