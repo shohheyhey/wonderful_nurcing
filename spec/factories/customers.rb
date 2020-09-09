@@ -26,13 +26,14 @@
 #
 FactoryBot.define do
   factory :customer do
-    office { "" }
-    category { "" }
-    name { "MyString" }
-    age { 1 }
-    birthday { "2020-09-07" }
-    kaigodo { 1 }
-    medical_history { "MyText" }
-    discription { "MyText" }
+    office_id { 1 }
+    category_id { rand(1..5) }
+    name { Faker::Name.name }
+    age { rand(65..100) }
+    birthday { Faker::Date.birthday }
+    kaigodo { rand(1..5) }
+    medical_history { Faker::Lorem.sentence }
+    discription { Faker::Lorem.sentence }
+
   end
 end

@@ -12,7 +12,7 @@ RSpec.describe Office, type: :model do
   # 個別でテストした方がよかった気がする
   context "必要な情報が入っていない時" do
     office = FactoryBot.attributes_for( :office, name: Faker::Name.name, email: nil, password: nil, password_confirmation: nil )
-    fit "ユーザー登録できない" do
+    it "ユーザー登録できない" do
       expect(office[:email]).to eq nil
       expect(office[:password]).to eq nil
       expect(office[:password_confirmation]).to eq nil
@@ -36,7 +36,7 @@ RSpec.describe Office, type: :model do
 
   context "password_confirmationが入力されていない" do
     let(:office){build(:office, password_confirmation: nil)}
-    fit "ユーザー登録に失敗する" do
+    it "ユーザー登録に失敗する" do
       expect(office).not_to be_valid
     end
   end

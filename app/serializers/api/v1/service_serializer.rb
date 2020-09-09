@@ -21,5 +21,10 @@
 #  fk_rails_...  (office_id => offices.id)
 #
 class ServiceSerializer < ActiveModel::Serializer
+  belongs_to :office
+  belongs_to :category
+  has_many :customers, through: :service_customers, dependent: :nullify
+  has_many :service_customers, dependent: :nullify
+
   attributes :id, :office, :category, :name, :fee
 end
