@@ -1,7 +1,11 @@
+<%= stylesheet_link_tag "api/v1/customers/index", :media => "all" %>
 <p id="notice"><%= notice %></p>
 
-<h1>Customers</h1>
+<h1 class="word" >Customers</h1>
+<% @customers.each do |c| %>
+<p><%= c.name%></p>
 
+<% end %>
 <table>
   <thead>
     <tr>
@@ -18,24 +22,8 @@
   </thead>
 
   <tbody>
-    <% @customers.each do |customer| %>
-      <tr>
-        <td><%= customer.office %></td>
-        <td><%= customer.category %></td>
-        <td><%= customer.name %></td>
-        <td><%= customer.age %></td>
-        <td><%= customer.birthday %></td>
-        <td><%= customer.kaigodo %></td>
-        <td><%= customer.medical_history %></td>
-        <td><%= customer.discription %></td>
 
-
-
-      </tr>
-    <% end %>
   </tbody>
 </table>
 
 <br>
-
-
