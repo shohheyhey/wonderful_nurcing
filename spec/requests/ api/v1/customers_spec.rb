@@ -26,19 +26,19 @@ RSpec.describe "/customers", type: :request do
   describe "GET /index" do
     subject {get( api_v1_customers_path )}
     # スタブもしくは、beforeを使うべき？
-      let!(:office){create(:office, id: Faker::Number.number)}
-      let!(:category){create(:category, id: rand(1..5), office_id: office.id, name: "category_name")}
-      let!(:customer_1){create(:customer, office_id: office.id, category_id: category.id)}
-      let!(:customer_2){create(:customer, office_id: office.id, category_id: category.id)}
-      let!(:customer_3){create(:customer, office_id: office.id, category_id: category.id)}
+      let!(:user){create(:user, id: Faker::Number.number)}
+      let!(:category){create(:category, id: rand(1..5), user_id: user.id, name: "category_name")}
+      let!(:customer_1){create(:customer, user_id: user.id, category_id: category.id)}
+      let!(:customer_2){create(:customer, user_id: user.id, category_id: category.id)}
+      let!(:customer_3){create(:customer, user_id: user.id, category_id: category.id)}
 
     it "お客様情報の一覧を登録順に表示できる。" do
       subject
       expect(response).to have_http_status(200)
       # res = JSON.parse(response.body)
-      expect(office.id).to eq office.id
+      expect(user.id).to eq user.id
       # expect(res.length).to eq 3
-      # expect(res[0]["office"]["id"]).to eq office.id
+      # expect(res[0]["user"]["id"]).to eq user.id
       # expect(res[0]["category"]["id"]).to eq category.id
 
 

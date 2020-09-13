@@ -1,6 +1,10 @@
 class Api::V1::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
+  def new
+    @user = User.new
+  end
+
   def create
-    Office.create!(sign_up_params)
+    User.create!(sign_up_params)
   end
 
   private

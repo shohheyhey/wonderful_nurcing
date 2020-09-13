@@ -11,22 +11,22 @@
 #  name            :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  category_id     :bigint
-#  office_id       :bigint
+#  category_id     :bigint           not null
+#  user_id         :bigint           not null
 #
 # Indexes
 #
 #  index_customers_on_category_id  (category_id)
-#  index_customers_on_office_id    (office_id)
+#  index_customers_on_user_id      (user_id)
 #
 # Foreign Keys
 #
 #  fk_rails_...  (category_id => categories.id)
-#  fk_rails_...  (office_id => offices.id)
+#  fk_rails_...  (user_id => users.id)
 #
 FactoryBot.define do
   factory :customer do
-    office_id { 1 }
+    user_id { 1 }
     category_id { rand(1..5) }
     name { Faker::Name.name }
     age { rand(65..100) }

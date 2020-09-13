@@ -4,7 +4,7 @@
 <h1>事業所情報を登録してください。</h1>
   <form>
     <div class="form-group">
-      <%= form_for(@office, url: "/api/v1/auth", method: :POST) do |f|%>
+      <%= form_for(@user, url: "/api/v1/auth", method: :POST) do |f|%>
       <%= f.text_field :name, placeholder: "enter Name", class: "form-control"%>
     </div>
     <div class="form-group">
@@ -21,7 +21,7 @@
     <button type="submit" class="btn btn-primary">Submit</button>
     <% end %>
     <% end %>
-    <%= link_to "/api/v1/auth/sign_in" do%>
+    <%= link_to new_api_v1_user_session_path do%>
       <button type="submit" class="btn btn-primary">ログインはこちらから</button>
     <% end %>
   </form>

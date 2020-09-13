@@ -72,7 +72,7 @@ module Api::V1
 
       # Only allow a list of trusted parameters through.
       def customer_params
-        params.require(:customer).permit(:office, :category, :name, :age, :birthday, :kaigodo, :medical_history, :discription)
+        params.require(:customer).permit(:user, :category, :name, :age, :birthday, :kaigodo, :medical_history, :discription)
       end
   end
 end

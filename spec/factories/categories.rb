@@ -4,21 +4,22 @@
 #
 #  id         :bigint           not null, primary key
 #  name       :string
+#  string     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  office_id  :bigint
+#  user_id    :bigint           not null
 #
 # Indexes
 #
-#  index_categories_on_office_id  (office_id)
+#  index_categories_on_user_id  (user_id)
 #
 # Foreign Keys
 #
-#  fk_rails_...  (office_id => offices.id)
+#  fk_rails_...  (user_id => users.id)
 #
 FactoryBot.define do
   factory :category do
-    office { "" }
+    user { "" }
     name { "MyString" }
   end
 end
