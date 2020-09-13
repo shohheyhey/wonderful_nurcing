@@ -13,3 +13,5 @@ Rails.application.config.assets.paths << Rails.root.join("node_modules")
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 Rails.application.config.assets.precompile += %w[api/v1/customers/index]
+Rails.application.config.assets.precompile += %w[devise_token_auth/registrations/layout]
+Rails.application.config.assets.precompile += %w[devise_token_auth/sessions/layout]

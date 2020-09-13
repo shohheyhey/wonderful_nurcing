@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "devise_token_auth/registrations/layout", :media => "all" %>
+
+<h1>新規会員登録</h1>
+<h1>事業所情報を登録してください。</h1>
+  <form>
+    <div class="form-group">
+      <%= form_for(@office, url: "/api/v1/auth", method: :POST) do |f|%>
+      <%= f.text_field :name, placeholder: "enter Name", class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password(minimum: 8)">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="exampleInputPassword_confirmation" placeholder="Password_confirmation(minimum: 8)">
+    </div>
+    <%= link_to "/api/v1/auth", method: :post do %>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <% end %>
+    <% end %>
+    <%= link_to "/api/v1/auth/sign_in" do%>
+      <button type="submit" class="btn btn-primary">ログインはこちらから</button>
+    <% end %>
+  </form>
