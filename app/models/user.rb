@@ -31,10 +31,14 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_uid_and_provider      (uid,provider) UNIQUE
 #
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   extend Devise::Models
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   include DeviseTokenAuth::Concerns::User
   has_many :categories, dependent: :nullify
   has_many :services, dependent: :nullify
