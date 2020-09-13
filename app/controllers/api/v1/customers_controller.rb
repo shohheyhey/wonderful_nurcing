@@ -5,7 +5,6 @@ module Api::V1
     # GET /customers
     # GET /customers.json
     def index
-      binding.pry
       @customers = Customer.all
       # render html: @customers
     end
