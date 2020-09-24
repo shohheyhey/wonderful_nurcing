@@ -14,6 +14,8 @@
 #  image                  :string
 #  name                   :string
 #  nickname               :string
+#  password               :string
+#  password_confirmation  :string
 #  provider               :string           default("email"), not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime

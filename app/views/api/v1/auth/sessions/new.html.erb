@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag "auth/sessions/layout", :media => "all" %>
+<h1>ログイン</h1>
+<h1>事業所情報を登録してください。</h1>
+  <form>
+  <%= form_for(@user, url: api_v1_user_session_path, method: :POST) do |f|%>
+    <div class="form-group">
+    <%= f.text_field :email, placeholder: "enter Email", class: "form-control"%>
+    </div>
+    <div class="form-group">
+    <%= f.text_field :password, placeholder: "enter Password", class: "form-control"%>
+    </div>
+    <div class="form-group">
+    <%= f.submit "submnit", class: "btn btn-primary "%>
+    </div>
+
+    <div class="form-group">
+      <%= link_to "/api/v1/auth/sign_up" do %>
+      <button type="submit" class="btn btn-primary ">新規登録はこちら</button>
+      <% end %>
+    </div>
+    <% end %>
+  </form>

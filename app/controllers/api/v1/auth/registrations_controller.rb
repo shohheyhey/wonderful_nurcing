@@ -4,7 +4,11 @@ class Api::V1::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsCon
   end
 
   def create
-    User.create!(sign_up_params)
+    @user = User.new(sign_up_params)
+    # binding.pry
+    if @user.save
+      redirect_to api_v1_customers_path and return
+    end
   end
 
   private
